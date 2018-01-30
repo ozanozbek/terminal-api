@@ -1,8 +1,8 @@
 {
   "name": "terminal-api",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "terminal-api is a terminal wrapper, providing easy access without ANSI codes or dirty details.",
-  "main": "src/terminal-api.js",
+  "main": "source/terminal-api.js",
   "scripts": {},
   "repository": {
     "type": "git",
