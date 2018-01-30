@@ -1,0 +1,29 @@
+{
+  "name": "terminal-api",
+  "version": "0.1.0",
+  "description": "terminal-api is a terminal wrapper, providing easy access without ANSI codes or dirty details.",
+  "main": "src/terminal-api.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ozanozbek/terminal-api.git"
+  },
+  "keywords": [
+    "terminal",
+    "console",
+    "ansi",
+    "position",
+    "style",
+    "color",
+    "256"
+  ],
+  "author": {
+    "name": "Ozan Ozbek",
+    "email": "erdemozanozbek@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ozanozbek/terminal-api/issues"
+  },
+  "homepage": "https://github.com/ozanozbek/terminal-api"
+}
