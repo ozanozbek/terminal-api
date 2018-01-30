@@ -7,7 +7,7 @@
 [Styles](#styles-) |
 [License](#license-)
 
-terminal-api is a terminal wrapper, providing easy access without ANSI codes or dirty details.
+terminal-api is a thin layer around low-level terminal commands, providing easy access without escape codes or other dirty details.
 - Manages terminal states
 - Handles position, color and styling
 - Supports 256 color
