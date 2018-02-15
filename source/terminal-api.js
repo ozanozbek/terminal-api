@@ -81,9 +81,6 @@ const TerminalApi = class extends EventEmitter {
     this.encoding = encoding;
     this._applyEncoding();
   }
-  setOnResize(onResize) {
-    this.onResize = onResize;
-  }
   setOptions(options = {}, force = false) {
     Object.keys(options).forEach(key => {
       if (key === 'styles') {
