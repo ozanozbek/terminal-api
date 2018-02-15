@@ -1,6 +1,6 @@
 {
   "name": "terminal-api",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "terminal-api is a thin layer around low-level terminal commands, providing easy access without escape codes or other dirty details.",
   "main": "source/terminal-api.js",
   "scripts": {},

@@ -39,6 +39,7 @@ const writeTitle = (title) => {
 
 const step = () => {
   stepNum++;
+  t.clear();
   drawBorders();
   writeTitle('terminal-api');
 };
@@ -47,5 +48,4 @@ let stepNum = 0;
 const intervalTime = 20;
 const t = new TerminalApi();
 t.setCursor(false);
-t.clear();
 let interval = setInterval(step, intervalTime);

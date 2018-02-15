@@ -1,15 +1,18 @@
 'use strict';
 
+const EventEmitter = require('events');
+
 const colors = require('./colors');
 const codes = require('./codes');
 const writer = require('./writer');
 
-const TerminalApi = class {
+const TerminalApi = class extends EventEmitter {
   static get colors() { return colors; }
   static get codes() { return codes; }
   static get writer() { return writer; }
 
   constructor(stream, encoding) {
+    super();
     this.colors = colors;
     this.codes = codes;
     this.writer = writer;
@@ -56,7 +59,15 @@ const TerminalApi = class {
     }
     return false;
   }
+  _onResize(width, height) {
+    this.width = this.stream.columns;
+    this.height = this.stream.rows;
+    this.emit('resize', width, height);
+  }
   setStream(stream = process.stdout, _applyEncoding = true) {
+    if (this.stream) {
+      this.stream.removeListener('resize', this._onResize.bind(this));
+    }
     this.stream = stream;
     this.width = this.stream.columns;
     this.height = this.stream.rows;
@@ -64,10 +75,14 @@ const TerminalApi = class {
     if (_applyEncoding) {
       this._applyEncoding();
     }
+    this.stream.on('resize', this._onResize.bind(this));
   }
   setEncoding(encoding = 'utf8') {
     this.encoding = encoding;
     this._applyEncoding();
+  }
+  setOnResize(onResize) {
+    this.onResize = onResize;
   }
   setOptions(options = {}, force = false) {
     Object.keys(options).forEach(key => {
