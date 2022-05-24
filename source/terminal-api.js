@@ -187,7 +187,7 @@ const TerminalApi = class extends EventEmitter {
   }
   w(text = ' ', options = {}, revert = false, force = false) {
     if (revert) {
-      const current = Object.assign({}, this.state);
+      const current = {...this.state};
     }
     this.setOptions(options, force);
     this.write(text);
